@@ -10,7 +10,10 @@ class Registration extends CI_Controller {
 		$this->load->view('templates/header');
 		$this->load->view('registration/form',$data);
 		$this->load->view('templates/footer');
-	
+	}
+	public function validation()
+	{
+		$this->load->model('Registration_model');	
 $this->form_validation->set_rules('name', 'name', 'trim|required|min_length[5]|max_length[18]');
 $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 $this->form_validation->set_rules('branch', 'branch', 'required');
@@ -19,10 +22,10 @@ $this->form_validation->set_rules('event', 'event', 'required');
 
 if ($this->form_validation->run()== FALSE)
 {
-	/*$data['title'] = "registration form";
+	 $data['title'] = "registration form";
 		$this->load->view('templates/header');
 		$this->load->view('registration/form',$data);
-		$this->load->view('templates/footer');*/
+		$this->load->view('templates/footer');
 }
 else {
 	$reg_form=array(

@@ -2,7 +2,7 @@
 <h3>this is your registration form for the event</h3>
 
 <div id="container">
-<?php echo form_open('Registration'); ?>
+<?php echo form_open('registration/validation'); ?>
 <?php echo validation_errors();?>
 <?php $hidden=array('reg_time'=> date("Y-m-d H:i:s")); ?> 
 <?php echo form_fieldset('Name :'); ?>
@@ -29,7 +29,7 @@ echo form_fieldset_close();?></br></br></br>
              'II yr' => 'II yr',
              'III yr' => 'III yr',
              'IV yr' => 'IV yr');
-echo form_fieldset_close();?>
+?>
 <?php echo form_dropdown('year',$year,'I yr');
 echo form_fieldset_close();?> </br></br></br>         
 

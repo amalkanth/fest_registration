@@ -7,7 +7,7 @@
 <nav class="navbar navbar-default">
  <div class="container-fluid">
  <div class="navbar-header">
-   <a class="navbar-brand" href="">TECHON-2K17</a>
+   <a class="navbar-brand" href="<?php echo base_url(); ?>">TECHON-2K17</a>
    
  </div>
  <!-- MENU ITEMS -->
@@ -17,7 +17,7 @@
  <li><a href="<?php echo base_url()?>contact">Contact</a></li>
  </ul>
  <ul class="nav navbar-nav navbar-right">
- <li><a href="#">Registration Desk Login</a></li>
+ <li><a href="<?php echo base_url()?>desk">Registration Desk Login</a></li>
  </ul>
  </div>
  </div>
