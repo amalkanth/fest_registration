@@ -13,7 +13,7 @@ class Registration extends CI_Controller {
 	}
 	public function validation()
 	{
-		$this->load->model('Registration_model');	
+		//$this->load->model('Registration_model');	
 $this->form_validation->set_rules('name', 'name', 'trim|required|min_length[5]|max_length[18]');
 $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 $this->form_validation->set_rules('branch', 'branch', 'required');
@@ -28,7 +28,7 @@ if ($this->form_validation->run()== FALSE)
 		$this->load->view('templates/footer');
 }
 else {
-	$reg_form=array(
+	$form=array(
 	'name'  =>$this->input->post('name'),
 	'email'  =>$this->input->post('email'),
 	'mob_number'  =>$this->input->post('mob_number'),
@@ -40,11 +40,14 @@ else {
 	'temp_id'  =>NULL,
 	'temp_id'  =>NULL
 	);
-	$insert_form=$this->Registration_model->insert($reg_form);
-	$data['title']='';
-	$data['page_header']='registration sucessful.contact registration desk to
+	$insert_form=$this->Registration_model->insert($form);
+	$data['form']=$form;
+	
+		$data['page_header']='registration sucessful.contact registration desk to
 	 get your permenent id';
+		$this->load->view('templates/header');
 	$this->load->view('registration/success',$data);
+	$this->load->view('templates/footer');
     }
 
    } 

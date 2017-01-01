@@ -4,7 +4,7 @@
 <div id="container">
 <?php echo form_open('registration/validation'); ?>
 <?php echo validation_errors();?>
-<?php $hidden=array('reg_time'=> date("Y-m-d H:i:s")); ?> 
+<?php $time= date("Y-m-d H:i:s") ?> 
 <?php echo form_fieldset('Name :'); ?>
 <?php echo form_input(array('id' => 'name', 'name' => 'name' 
                               ,'style'=>'width:150px')); 
